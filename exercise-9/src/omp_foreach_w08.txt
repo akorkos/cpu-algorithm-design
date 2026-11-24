@@ -1,0 +1,19 @@
+name,size,avg throughput,avg time,stdev time,cv
+Reordering_reverse,1073741824,11.1253,1.54422e+09,1.11794e+07,0.00723954
+Reordering_gather_data,1073741824,102.217,2.1009e+08,2.61582e+06,0.0124509
+Reordering_scatter_func_n1,1073741824,80.7576,1.41822e+08,2.46782e+07,0.174008
+Subrange_singles,1073741824,55.3384,3.10451e+08,970136,0.00312492
+Subrange_interval,1073741824,86.2636,1.99155e+08,4.14444e+06,0.0208101
+Subrange_intervals,1073741824,7.48886,2.29406e+09,3.59821e+06,0.00156849
+Subrange_soa_explicit_stride_domain,1073741824,31.8333,1.79894e+08,1.16468e+06,0.00647425
+Reordering_is_permutation,1073741824,23.5871,4.85572e+08,3.49511e+07,0.0719794
+reverse:	(0.00,536870912.00,268435456.00,805306368.00,134217728.00,671088640.00,402653184.00,939524096.00,67108864.00,603979776.00)
+gather:	(5.00,6.00,7.00,8.00,9.00,10.00,11.00,12.00,13.00,14.00)
+scatter:(2.00,5.00,8.00,11.00,14.00,17.00,20.00,23.00,26.00,29.00)
+singles:	(-1.00,-1.00,4.00,6.00,8.00,10.00,12.00,14.00,16.00,18.00)
+interval:	(0.00,4.00,4.00,6.00,8.00,10.00,12.00,14.00,16.00,18.00)
+intervals:	(-1.00,-1.00,4.00,6.00,8.00,10.00,12.00,14.00,16.00,18.00)
+stride:	(0.00,3.00,6.00,9.00,12.00,15.00,18.00,21.00,24.00,27.00)
+	(2.00,8.00,14.00,20.00,26.00,32.00,38.00,44.00,50.00,56.00)
+	(8.00,50.00,128.00,242.00,392.00,578.00,800.00,1058.00,1352.00,1682.00)
+success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.success.

@@ -1,0 +1,26 @@
+
+            NUMAContainer<Real> V(N + 1);
+#pragma omp parallel default(none) shared(V, n)
+            {
+#pragma omp for simd
+                // #pragma GCC unroll
+                for (size_t i = 0; i < V.size(); i++)
+                {
+                    V[i] = 1 + 10 * (i / n);
+                }
+            }
+
+            const int nodes = omp_get_num_places();
+            const int block_size = (1 << 16);
+            // NUMAContainer<Real> W(itSeq(0), itSeq(N));
+            const int blocks_per_node = std::ceil((static_cast<double>(V.size() - 1) / block_size) / nodes);
+            Index blocknum = nodes * blocks_per_node;
+            NUMAContainer<Int> block_sums(nodes * blocks_per_node + 1, 0);
+            NUMAContainer<Index> I(Nsup + 1, -1);
+            NUMAContainer<Real> W(N, -1);  // max length N
+            NUMAContainer<Real> W2(N, 0); // max length N
+            Index init = 0;
+            Index sep = 0;
+
+            auto Vview = ranges::views::iota(1, N) | views::transform([&V](int i)
+                                                                      { return ((V[i-1])!=(V[i])); });
